@@ -1,95 +1,176 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+
+//Style
+import styles from './page.module.css';
+
+//React Bootstrap
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+
+//NextJS
+import Image from 'next/image';
+
+//Images 
+import openDoor from './icons/openDoor.png';
+import closeDoor from './icons/closeDoor.png';
+import upArrow from './icons/upArrow.png';
+import downArrow from './icons/downArrow.png';
 
 export default function Home() {
+  const openTheDoor = async() => {
+    //$('.door').animate({'width': '0'}, 1000, 'linear');
+    // return console.log('test');
+    const door = document.getElementById('door'); 
+    if(door){ 
+      return door.style.width = '0rem'
+    }
+  }
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <Container className={styles.container}>
+        <Container className={styles.panelContainer}>
+          <Row className={styles.row} style={{justifyContent: 'space-around', backgroundColor: 'black'}}>
+            <Col className={styles.displayFloor}>
+              <Image src={upArrow} alt="open" width={35} style={{marginTop: '.3rem'}}/>
+            </Col>
+            <Col className={styles.displayFloor}>
+              00
+            </Col>
+            <Col className={styles.displayFloor}>
+              <Image src={downArrow} alt="open" width={35} style={{marginTop: '.3rem'}}/>
+            </Col>
+          </Row>
+          {/* FLOOR BUTTONS */}
+          <Row className={styles.row}>
+            <Col>
+              <Button className={styles.floorBtn}>
+                17
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                18
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                19
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                20
+              </Button>
+            </Col>
+          </Row>
+          <Row className={styles.row}>
+            <Col>
+              <Button className={styles.floorBtn}>
+                13
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                14
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                15
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                16
+              </Button>
+            </Col>
+          </Row>
+          <Row className={styles.row}>
+            <Col>
+              <Button className={styles.floorBtn}>
+                9
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                10
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                11
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                12
+              </Button>
+            </Col>
+          </Row>
+          <Row className={styles.row}>
+          <Col>
+              <Button className={styles.floorBtn}>
+                5
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                6
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                7
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                8
+              </Button>
+            </Col>
+          </Row>
+          <Row className={styles.row}>
+            <Col>
+              <Button className={styles.floorBtn}>
+                1
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                2
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                3
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                4
+              </Button>
+            </Col>
+          </Row>
+          <Row className={styles.row} style={{justifyContent: 'start', marginBottom: '0rem'}}>
+            <Col>
+              <Button type='submit' className={styles.floorBtn} style={{marginRight: '.4rem'}} onClick={() => openTheDoor()}>
+                <Image src={openDoor} alt='open' width={40} style={{marginTop: '.3rem'}}/>
+              </Button>
+            </Col>
+            <Col>
+              <Button className={styles.floorBtn}>
+                <Image src={closeDoor} alt='open' width={35} style={{marginTop: '.3rem'}}/>
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+        <Container className={styles.panelContainer} id='door'>
+              
+        </Container>
+      </Container>
     </main>
   );
 }
