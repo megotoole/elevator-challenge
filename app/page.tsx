@@ -9,24 +9,21 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+//React
+import { useState } from 'react';
+
 //NextJS
 import Image from 'next/image';
 
 //Images 
-import openDoor from './icons/openDoor.png';
-import closeDoor from './icons/closeDoor.png';
-import upArrow from './icons/upArrow.png';
-import downArrow from './icons/downArrow.png';
+import openDoor from './images/openDoor.png';
+import closeDoor from './images/closeDoor.png';
+import upArrow from './images/upArrow.png';
+import downArrow from './images/downArrow.png';
+import person from './images/person.png';
 
 export default function Home() {
-  const openTheDoor = async() => {
-    //$('.door').animate({'width': '0'}, 1000, 'linear');
-    // return console.log('test');
-    const door = document.getElementById('door'); 
-    if(door){ 
-      return door.style.width = '0rem'
-    }
-  }
+  const [doorOpen, setDoorOpen] = useState<boolean>(false);
 
   return (
     <main className={styles.main}>
@@ -156,19 +153,23 @@ export default function Home() {
           </Row>
           <Row className={styles.row} style={{justifyContent: 'start', marginBottom: '0rem'}}>
             <Col>
-              <Button type='submit' className={styles.floorBtn} style={{marginRight: '.4rem'}} onClick={() => openTheDoor()}>
+              {/* <Button className={styles.floorBtn} style={{marginRight: '.4rem'}} onClick={() => openTheDoor()}> */}
+              <Button className={styles.floorBtn} style={{marginRight: '.4rem'}} onClick={() => setDoorOpen(true)}>
                 <Image src={openDoor} alt='open' width={40} style={{marginTop: '.3rem'}}/>
               </Button>
             </Col>
             <Col>
-              <Button className={styles.floorBtn}>
+              {/* <Button className={styles.floorBtn} onClick={() => closeTheDoor()}> */}
+              <Button className={styles.floorBtn} onClick={() => setDoorOpen(false)}>
                 <Image src={closeDoor} alt='open' width={35} style={{marginTop: '.3rem'}}/>
               </Button>
             </Col>
           </Row>
         </Container>
-        <Container className={styles.panelContainer} id='door'>
-              
+        <Container className={styles.panelContainer}>
+          <Row className={doorOpen ? styles.doorOpenStyle : styles.doorClosedStyle}>
+            
+          </Row>
         </Container>
       </Container>
     </main>

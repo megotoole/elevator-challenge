@@ -49,6 +49,24 @@
   font-family: sans-serif;
 }
 
-#door {
+.door {
+  background-color: grey;
+}
+
+.doorOpenStyle {
+  background-color: grey;
+  width: 10%;
+  height: 100%;
   transition: width 2s;
+}
+
+.doorClosedStyle {
+  background-color: grey;
+  width: 100%;
+  height: 100%; 
+  transition: width 2s;
+}
+
+.person {
+  justify-content: center;
 }
