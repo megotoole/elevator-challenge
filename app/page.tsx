@@ -60,6 +60,46 @@ export default function Home() {
     setButtonDisabled(false); 
     setIsMalfunctioning(false);
   }
+
+  // useEffect(() => {
+  //   console.log(floorQueue);
+  // }, [floorQueue]);
+
+  /* Floor queue */
+  // const floorRequest = (floorNum: number) => {
+  //   if (!floorQueue.includes(floorNum) && floorNum !== currentFloor) {
+  //     setFloorQueue([...floorQueue, floorNum]);
+  //   }
+
+  //   setTimeout(moveToFloor, 5000); 
+  // }
+
+  // const moveToFloor = () => {
+  //   for(let i = 0; i < floorQueue.length; i++){
+  //     if(currentFloor > floorQueue[i]){
+  //       //show down arrow
+  //       setMovingDown(true);
+  //       setMovingUp(false);
+  //     } else if(currentFloor < floorQueue[i]){
+  //       //show up arrow
+  //       setMovingUp(true);
+  //       setMovingDown(false);
+  //     } else {
+  //       //hide arrows
+  //       setMovingUp(false);
+  //       setMovingDown(false);
+  //     }
+  //     setCurrentFloor(floorQueue[i]);
+  //     setTimeout(openTheDoor, 1500, floorQueue[i]);
+  //   }
+  // }
+
+  // //tenant chooses floor every ten seconds
+  // setInterval(function(){
+  //   let randomFloor = Math.floor(Math.random() * 20) + 1; 
+  //   setFloorQueue([...floorQueue, randomFloor]);
+  //   moveToFloor();
+  // }, 10000)
   
   return (
     <main className={styles.main}>
