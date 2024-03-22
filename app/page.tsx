@@ -192,12 +192,12 @@ export default function Home() {
           </Row>
           <Row className={styles.row} style={{marginBottom: '0rem', justifyContent: 'space-evenly'}}>
             <Col>
-              <Button className={styles.floorBtn} onClick={() => setDoorOpen(true)}>
+              <Button className={styles.floorBtn} onClick={() => setDoorOpen(true)} disabled={buttonDisabled}>
                 <Image src={openDoor} alt='open' width={40} style={{marginTop: '.3rem'}}/>
               </Button>
             </Col>
             <Col>
-              <Button className={styles.floorBtn} onClick={() => setDoorOpen(false)}>
+              <Button className={styles.floorBtn} onClick={() => setDoorOpen(false)} disabled={buttonDisabled}>
                 <Image src={closeDoor} alt='open' width={35} style={{marginTop: '.3rem'}}/>
               </Button>
             </Col>
